@@ -1,0 +1,36 @@
+% Michael Dzamba, g7atinko, 994803806
+P -> 'in' | 'with' | 'on' | 'for' | 'to' | 'from' | 'onto' | 'of' | 'along'
+N_countable -> 'cat' | 'eggplant' | 'poodle' | 'autoclave' | 'package' | 'elephant' | 'hovercraft' | 'menu'
+N_mass -> 'fur' | 'Fur' | 'Cheese'  | 'cheese' | 'Help' | 'help'
+%Some proper nouns
+NPrp -> 'Nadia' | 'Ross' 
+%Some pronouns (subject / object)
+NPro_sub -> 'she' | 'She' | 'he' | 'He' | 'they' | 'They' | 'I'
+NPro_obj -> 'her' | 'him' | 'me' 
+%Some determiners
+Det -> 'the' | 'The' | 'a' | 'A' | 'some' | 'Some'
+Det_mass -> 'the' | 'The' | 'some' | 'Some' 
+%Some adjectives and adverbs
+Adj -> 'long' | 'soft' | 'tall' | 'handsome'
+Adv -> 'immediately' | 'slowly' | 'already' | 'really' | 'always'
+%Some non-trainsitive verbs 
+V_ps -> 'left' | 'ate' | 'arrived' | 'married' | 'feasted' | 'prevented' | 'jumped' | 'ran' | 'was'
+V_pp -> 'left' | 'eaten' | 'arrived' | 'married' | 'feasted' | 'prevented' | 'jumped' | 'run' | 'been' 
+V_bs -> 'leave' | 'eat' | 'arrive' | 'marry' | 'feast' | 'prevent' | 'jump' | 'run' | 'be' 
+V_ger -> 'leaving' | 'eating' | 'arriving' | 'marrying' | 'feasting' | 'preventing' | 'jumping' | 'running' | 'being'
+%support for some auxiallry verbs
+Aux_modal -> 'can' | 'could' | 'may' | 'might' | 'must' | 'will' | 'would' | 'should' | 'shall'
+Aux_perfect -> 'has'
+Aux_perfect_bs -> 'have'
+Aux_progressive -> 'is'
+Aux_progressive_bs -> 'be'
+Aux_progressive_pp -> 'been'
+Aux_passive -> 'is'
+Aux_passive_bs -> 'be'
+Aux_passive_pp -> 'been'
+%Verbs that must be followed by something
+V_NP -> 'fondled' | 'brought' | 'told' | 'believed' | 'wanted' | 'reminded' | 'left'
+V_NP_PP_to -> 'brought'
+V_NP_PP_from -> 'brought'
+V_NP_VP_to -> 'told'
+V_S -> 'believed'

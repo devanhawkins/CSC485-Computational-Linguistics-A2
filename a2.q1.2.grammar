@@ -1,0 +1,22 @@
+% Michael Dzamba, g7atinko, 994803806
+S -> NP VP
+PP -> P NP | P NPro_obj
+AdvP -> Adv | AdvP Adv
+AdjP -> Adj | AdjP Adj
+VP -> V AdvP | AdvP V | V | VP PP
+NP -> NP_Pro | NP_Prp | NP_N
+NP_Pro -> NPro_obj N | NPro_obj AdjP N | NPro_sub
+NP_Prp -> AdjP NPrp | NPrp
+NP_N -> Det N | Det AdjP N | NP_N PP
+V -> Aux_modal modal | Aux_perfect perfect | Aux_progressive progressive | Aux_passive passive | V_ps
+modal -> perfect_bs | progressive_bs | passive_bs | V_bs
+perfect_bs -> Aux_perfect_bs perfect
+progressive_bs -> Aux_progressive_bs progressive
+passive_bs -> Aux_passive_bs passive
+perfect -> progressive_pp | passive_pp | V_pp
+progressive_pp -> Aux_progressive_pp progressive
+passive_pp -> Aux_passive_pp passive
+progressive -> passive_ger | V_ger
+passive_ger -> Aux_passive_ger passive
+passive -> V_pp
+

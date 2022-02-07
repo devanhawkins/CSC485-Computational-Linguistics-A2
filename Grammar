@@ -1,0 +1,72 @@
+% Michael Dzamba, g7atinko, 994803806
+S -> NP VP
+S_that -> 'that' S
+PP -> P NP_obj
+PP_from -> 'from' NP_obj
+PP_to -> 'to' NP_obj
+%If there can be one adverb or adjective
+%there can be multiple
+AdvP -> Adv | AdvP Adv
+AdjP -> Adj | AdjP Adj
+%Allow for Verbs with any combination of adverbs and 
+%propositional phrarses on the ends
+VP -> V AdvP | AdvP V | AdvP V AdvP | V | VP PP
+%make sure to take the base stem form
+%when having to starting a verb phrase
+VP_to -> 'to' V_bs
+%Accounts for a Verb which takes exactly one object
+%i.e. 'Nadia fondled the eggplant'
+VP -> AdvP V_NP NP_obj | V_NP AdvP NP_obj | AdvP V_NP AdvP NP_obj | V_NP NP_obj
+%Accounts for a verb which takes exactly one object and a 'to'
+%propositional phrase
+%i.e. 'The handsome poodle brought Ross to the autoclave'
+VP -> AdvP V_NP_PP_to NP_obj PP_to | V_NP_PP_to AdvP NP_obj PP_to | AdvP V_NP_PP_to AdvP NP_obj PP_to | V_NP_PP_to NP_obj PP_to
+%Accounts for a verb which takes exactly one object and a 'from'
+%propositional phrase
+%i.e. 'The handsome poodle brought Ross from the autoclave'
+VP -> AdvP V_NP_PP_from NP_obj PP_from | V_NP_PP_from AdvP NP_obj PP_from | AdvP V_NP_PP_from AdvP NP_obj PP_from | V_NP_PP_from NP_obj PP_from
+%Accounts for a verb that takes a Object followed by a 'to'
+%prefixed verb phrase
+%i.e. 'They told her to run'
+VP -> AdvP V_NP_VP_to NP_obj VP_to | V_NP_VP_to AdvP NP_obj VP_to | AdvP V_NP_VP_to AdvP NP_obj VP_to | V_NP_VP_to NP_obj VP_to
+%Accounts for verbs that are followed by a sentence
+%i.e. 'She believed Ross was already on the hovercraft'
+VP -> AdvP V_S S | V_S AdvP S | AdvP V_S AdvP S | V_S S
+%Accounts for verbs that are followed by a sentence
+%i.e. 'She believed that Ross was already on the hovercraft'
+VP -> AdvP V_S S_that | V_S AdvP S_that | AdvP V_S AdvP S_that | V_S S_that
+%Possible types of Noun Phrases
+%NP_Pro - Pronoun based
+%NP_Prp - Proper noun based
+%NP_N - Not pronoun or proper noun based 
+NP -> NP_Pro | NP_Prp | NP_N
+NP_Pro -> NPro_obj N | NPro_obj AdjP N | NPro_sub
+NP_Prp -> AdjP NPrp | NPrp
+NP_N -> Det N_countable | Det AdjP N_countable | NP_N PP | Det_mass AdjP N_mass | Adj N_mass | Det_mass N_mass | N_mass
+%This is needed for 1.3, since there are a lot of Noun Phrase Objects
+NP_obj -> NP | NPro_obj
+%Any verb can have auxiallary verbs, this should account for some of
+V -> Aux_modal modal | Aux_perfect perfect | Aux_progressive progressive | Aux_passive passive | V_ps
+%the case when starting with modal
+%make sure its followed by base stem form
+modal -> perfect_bs | progressive_bs | passive_bs | V_bs
+perfect_bs -> Aux_perfect_bs perfect
+progressive_bs -> Aux_progressive_bs progressive
+passive_bs -> Aux_passive_bs passive
+%the case when using perfect, make sure
+%its followed by past participle form
+perfect -> progressive_pp | passive_pp | V_pp
+progressive_pp -> Aux_progressive_pp progressive
+passive_pp -> Aux_passive_pp passive
+%the case when using progressove, make sure
+%its follwed by the gerundive form
+progressive -> passive_ger | V_ger
+passive_ger -> Aux_passive_ger passive
+%the case when using passive, make sure
+%its follwed by the past participle form
+passive -> V_pp 
+
+
+
+
+

@@ -1,0 +1,486 @@
+Nadia left immediately
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP (V (V_ps left)) (AdvP (Adv immediately))))
+the cat with the long soft fur slowly ate
+(S
+  (NP
+    (NP_N
+      (NP_N (Det the) (N_countable cat))
+      (PP
+        (P with)
+        (NP_obj
+          (NP
+            (NP_N
+              (Det_mass the)
+              (AdjP (AdjP (Adj long)) (Adj soft))
+              (N_mass fur)))))))
+  (VP (AdvP (Adv slowly)) (V (V_ps ate))))
+She arrived
+(S (NP (NP_Pro (NPro_sub She))) (VP (V (V_ps arrived))))
+Nadia will leave
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP (V (Aux_modal will) (modal (V_bs leave)))))
+Nadia has left
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP (V (Aux_perfect has) (perfect (V_pp left)))))
+Nadia may have been leaving
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (V
+      (Aux_modal may)
+      (modal
+        (perfect_bs
+          (Aux_perfect_bs have)
+          (perfect
+            (progressive_pp
+              (Aux_progressive_pp been)
+              (progressive (V_ger leaving)))))))))
+Nadia fondled the eggplant
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (V_NP fondled)
+    (NP_obj (NP (NP_N (Det the) (N_countable eggplant))))))
+The handsome poodle brought Ross to the autoclave
+(S
+  (NP (NP_N (Det The) (AdjP (Adj handsome)) (N_countable poodle)))
+  (VP
+    (V_NP_PP_to brought)
+    (NP_obj (NP (NP_Prp (NPrp Ross))))
+    (PP_to to (NP_obj (NP (NP_N (Det the) (N_countable autoclave)))))))
+(S
+  (NP (NP_N (Det The) (AdjP (Adj handsome)) (N_countable poodle)))
+  (VP
+    (VP (V_NP brought) (NP_obj (NP (NP_Prp (NPrp Ross)))))
+    (PP
+      (P to)
+      (NP_obj (NP (NP_N (Det the) (N_countable autoclave)))))))
+Nadia brought a package for the cheese
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (V_NP brought)
+    (NP_obj
+      (NP
+        (NP_N
+          (NP_N (Det a) (N_countable package))
+          (PP
+            (P for)
+            (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese))))))))))
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (VP
+      (V_NP brought)
+      (NP_obj (NP (NP_N (Det a) (N_countable package)))))
+    (PP (P for) (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese)))))))
+They told her to jump onto the elephant
+(S
+  (NP (NP_Pro (NPro_sub They)))
+  (VP
+    (VP
+      (V_NP_VP_to told)
+      (NP_obj (NPro_obj her))
+      (VP_to to (V_bs jump)))
+    (PP
+      (P onto)
+      (NP_obj (NP (NP_N (Det the) (N_countable elephant)))))))
+She believed that Ross was on the hovercraft
+(S
+  (NP (NP_Pro (NPro_sub She)))
+  (VP
+    (V_S believed)
+    (S_that
+      that
+      (S
+        (NP (NP_Prp (NPrp Ross)))
+        (VP
+          (VP (V (V_ps was)))
+          (PP
+            (P on)
+            (NP_obj (NP (NP_N (Det the) (N_countable hovercraft))))))))))
+(S
+  (NP (NP_Pro (NPro_sub She)))
+  (VP
+    (VP
+      (V_S believed)
+      (S_that that (S (NP (NP_Prp (NPrp Ross))) (VP (V (V_ps was))))))
+    (PP
+      (P on)
+      (NP_obj (NP (NP_N (Det the) (N_countable hovercraft)))))))
+She really wanted help
+(S
+  (NP (NP_Pro (NPro_sub She)))
+  (VP
+    (AdvP (Adv really))
+    (V_NP wanted)
+    (NP_obj (NP (NP_N (N_mass help))))))
+Cheese was always on the menu
+(S
+  (NP (NP_N (N_mass Cheese)))
+  (VP
+    (VP (V (V_ps was)) (AdvP (Adv always)))
+    (PP (P on) (NP_obj (NP (NP_N (Det the) (N_countable menu)))))))
+The eggplant reminded Nadia of Ross
+(S
+  (NP (NP_N (Det The) (N_countable eggplant)))
+  (VP
+    (VP (V_NP reminded) (NP_obj (NP (NP_Prp (NPrp Nadia)))))
+    (PP (P of) (NP_obj (NP (NP_Prp (NPrp Ross)))))))
+The cat slowly ate
+(S
+  (NP (NP_N (Det The) (N_countable cat)))
+  (VP (AdvP (Adv slowly)) (V (V_ps ate))))
+Nadia will be married
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (V
+      (Aux_modal will)
+      (modal
+        (passive_bs (Aux_passive_bs be) (passive (V_pp married)))))))
+Nadia has been feasting
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (V
+      (Aux_perfect has)
+      (perfect
+        (progressive_pp
+          (Aux_progressive_pp been)
+          (progressive (V_ger feasting)))))))
+The handsome poodle left
+(S
+  (NP (NP_N (Det The) (AdjP (Adj handsome)) (N_countable poodle)))
+  (VP (V (V_ps left))))
+The handsome poodle brought Ross
+(S
+  (NP (NP_N (Det The) (AdjP (Adj handsome)) (N_countable poodle)))
+  (VP (V_NP brought) (NP_obj (NP (NP_Prp (NPrp Ross))))))
+They told her
+(S
+  (NP (NP_Pro (NPro_sub They)))
+  (VP (V_NP told) (NP_obj (NPro_obj her))))
+They told her to run from her to him
+(S
+  (NP (NP_Pro (NPro_sub They)))
+  (VP
+    (VP
+      (VP
+        (V_NP_VP_to told)
+        (NP_obj (NPro_obj her))
+        (VP_to to (V_bs run)))
+      (PP (P from) (NP_obj (NPro_obj her))))
+    (PP (P to) (NP_obj (NPro_obj him)))))
+Ross was on the hovercraft
+(S
+  (NP (NP_Prp (NPrp Ross)))
+  (VP
+    (VP (V (V_ps was)))
+    (PP
+      (P on)
+      (NP_obj (NP (NP_N (Det the) (N_countable hovercraft)))))))
+Ross was already on the hovercraft
+(S
+  (NP (NP_Prp (NPrp Ross)))
+  (VP
+    (VP (V (V_ps was)) (AdvP (Adv already)))
+    (PP
+      (P on)
+      (NP_obj (NP (NP_N (Det the) (N_countable hovercraft)))))))
+Ross already was on the hovercraft
+(S
+  (NP (NP_Prp (NPrp Ross)))
+  (VP
+    (VP (AdvP (Adv already)) (V (V_ps was)))
+    (PP
+      (P on)
+      (NP_obj (NP (NP_N (Det the) (N_countable hovercraft)))))))
+She believed Ross
+(S
+  (NP (NP_Pro (NPro_sub She)))
+  (VP (V_NP believed) (NP_obj (NP (NP_Prp (NPrp Ross))))))
+She believed Ross was on the hovercraft
+(S
+  (NP (NP_Pro (NPro_sub She)))
+  (VP
+    (V_S believed)
+    (S
+      (NP (NP_Prp (NPrp Ross)))
+      (VP
+        (VP (V (V_ps was)))
+        (PP
+          (P on)
+          (NP_obj (NP (NP_N (Det the) (N_countable hovercraft)))))))))
+(S
+  (NP (NP_Pro (NPro_sub She)))
+  (VP
+    (VP
+      (V_S believed)
+      (S (NP (NP_Prp (NPrp Ross))) (VP (V (V_ps was)))))
+    (PP
+      (P on)
+      (NP_obj (NP (NP_N (Det the) (N_countable hovercraft)))))))
+The eggplant reminded Nadia
+(S
+  (NP (NP_N (Det The) (N_countable eggplant)))
+  (VP (V_NP reminded) (NP_obj (NP (NP_Prp (NPrp Nadia))))))
+They believed Ross was on the eggplant
+(S
+  (NP (NP_Pro (NPro_sub They)))
+  (VP
+    (V_S believed)
+    (S
+      (NP (NP_Prp (NPrp Ross)))
+      (VP
+        (VP (V (V_ps was)))
+        (PP
+          (P on)
+          (NP_obj (NP (NP_N (Det the) (N_countable eggplant)))))))))
+(S
+  (NP (NP_Pro (NPro_sub They)))
+  (VP
+    (VP
+      (V_S believed)
+      (S (NP (NP_Prp (NPrp Ross))) (VP (V (V_ps was)))))
+    (PP (P on) (NP_obj (NP (NP_N (Det the) (N_countable eggplant)))))))
+He believed Ross was on the cheese to the eggplant
+(S
+  (NP (NP_Pro (NPro_sub He)))
+  (VP
+    (V_S believed)
+    (S
+      (NP (NP_Prp (NPrp Ross)))
+      (VP
+        (VP
+          (VP (V (V_ps was)))
+          (PP
+            (P on)
+            (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese))))))
+        (PP
+          (P to)
+          (NP_obj (NP (NP_N (Det the) (N_countable eggplant)))))))))
+(S
+  (NP (NP_Pro (NPro_sub He)))
+  (VP
+    (V_S believed)
+    (S
+      (NP (NP_Prp (NPrp Ross)))
+      (VP
+        (VP (V (V_ps was)))
+        (PP
+          (P on)
+          (NP_obj
+            (NP
+              (NP_N
+                (NP_N (Det_mass the) (N_mass cheese))
+                (PP
+                  (P to)
+                  (NP_obj
+                    (NP (NP_N (Det the) (N_countable eggplant)))))))))))))
+(S
+  (NP (NP_Pro (NPro_sub He)))
+  (VP
+    (VP
+      (V_S believed)
+      (S
+        (NP (NP_Prp (NPrp Ross)))
+        (VP
+          (VP (V (V_ps was)))
+          (PP
+            (P on)
+            (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese))))))))
+    (PP (P to) (NP_obj (NP (NP_N (Det the) (N_countable eggplant)))))))
+(S
+  (NP (NP_Pro (NPro_sub He)))
+  (VP
+    (VP
+      (V_S believed)
+      (S (NP (NP_Prp (NPrp Ross))) (VP (V (V_ps was)))))
+    (PP
+      (P on)
+      (NP_obj
+        (NP
+          (NP_N
+            (NP_N (Det_mass the) (N_mass cheese))
+            (PP
+              (P to)
+              (NP_obj (NP (NP_N (Det the) (N_countable eggplant)))))))))))
+(S
+  (NP (NP_Pro (NPro_sub He)))
+  (VP
+    (VP
+      (VP
+        (V_S believed)
+        (S (NP (NP_Prp (NPrp Ross))) (VP (V (V_ps was)))))
+      (PP (P on) (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese))))))
+    (PP (P to) (NP_obj (NP (NP_N (Det the) (N_countable eggplant)))))))
+help was always in the cheese
+(S
+  (NP (NP_N (N_mass help)))
+  (VP
+    (VP (V (V_ps was)) (AdvP (Adv always)))
+    (PP (P in) (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese)))))))
+They always wanted really help
+(S
+  (NP (NP_Pro (NPro_sub They)))
+  (VP
+    (AdvP (Adv always))
+    (V_NP wanted)
+    (AdvP (Adv really))
+    (NP_obj (NP (NP_N (N_mass help))))))
+He told her to run in the cheese
+(S
+  (NP (NP_Pro (NPro_sub He)))
+  (VP
+    (VP
+      (V_NP_VP_to told)
+      (NP_obj (NPro_obj her))
+      (VP_to to (V_bs run)))
+    (PP (P in) (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese)))))))
+Nadia left immediately
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP (V (V_ps left)) (AdvP (Adv immediately))))
+Nadia might have been prevented
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (V
+      (Aux_modal might)
+      (modal
+        (perfect_bs
+          (Aux_perfect_bs have)
+          (perfect
+            (passive_pp
+              (Aux_passive_pp been)
+              (passive (V_pp prevented)))))))))
+I was on the cheese
+(S
+  (NP (NP_Pro (NPro_sub I)))
+  (VP
+    (VP (V (V_ps was)))
+    (PP (P on) (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese)))))))
+The poodle brought Ross to the cheese from the autoclave
+(S
+  (NP (NP_N (Det The) (N_countable poodle)))
+  (VP
+    (V_NP_PP_to brought)
+    (NP_obj (NP (NP_Prp (NPrp Ross))))
+    (PP_to
+      to
+      (NP_obj
+        (NP
+          (NP_N
+            (NP_N (Det_mass the) (N_mass cheese))
+            (PP
+              (P from)
+              (NP_obj (NP (NP_N (Det the) (N_countable autoclave)))))))))))
+(S
+  (NP (NP_N (Det The) (N_countable poodle)))
+  (VP
+    (VP
+      (V_NP_PP_to brought)
+      (NP_obj (NP (NP_Prp (NPrp Ross))))
+      (PP_to to (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese))))))
+    (PP
+      (P from)
+      (NP_obj (NP (NP_N (Det the) (N_countable autoclave)))))))
+(S
+  (NP (NP_N (Det The) (N_countable poodle)))
+  (VP
+    (VP (V_NP brought) (NP_obj (NP (NP_Prp (NPrp Ross)))))
+    (PP
+      (P to)
+      (NP_obj
+        (NP
+          (NP_N
+            (NP_N (Det_mass the) (N_mass cheese))
+            (PP
+              (P from)
+              (NP_obj (NP (NP_N (Det the) (N_countable autoclave)))))))))))
+(S
+  (NP (NP_N (Det The) (N_countable poodle)))
+  (VP
+    (VP
+      (VP (V_NP brought) (NP_obj (NP (NP_Prp (NPrp Ross)))))
+      (PP (P to) (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese))))))
+    (PP
+      (P from)
+      (NP_obj (NP (NP_N (Det the) (N_countable autoclave)))))))
+The poodle brought Ross along the cheese
+(S
+  (NP (NP_N (Det The) (N_countable poodle)))
+  (VP
+    (VP (V_NP brought) (NP_obj (NP (NP_Prp (NPrp Ross)))))
+    (PP
+      (P along)
+      (NP_obj (NP (NP_N (Det_mass the) (N_mass cheese)))))))
+I have left
+No parses.
+The cat with the really long fur slowly ate
+No parses.
+The cats with the long soft fur slowly ate
+No parses.
+Nadia will leave Ross
+No parses.
+They have left
+No parses.
+he brought the cat cheese
+No parses.
+they were on the cheese
+No parses.
+Nadia with the long soft fur slowly ate
+No parses.
+The cat with the tall her arrived
+No parses.
+Nadia will left
+No parses.
+Nadia has could leave
+No parses.
+Nadia has had left
+No parses.
+Nadia found
+No parses.
+Ross brought to him
+No parses.
+They told to jump onto the elephant
+No parses.
+The cat with the slowly tall her arrived
+No parses.
+She with the long soft fur slowly ate
+No parses.
+They have left
+No parses.
+that she believed that Ross was on the hovercraft
+No parses.
+I has left
+(S
+  (NP (NP_Pro (NPro_sub I)))
+  (VP (V (Aux_perfect has) (perfect (V_pp left)))))
+Nadia left really always really really
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (V (V_ps left))
+    (AdvP
+      (AdvP (AdvP (AdvP (Adv really)) (Adv always)) (Adv really))
+      (Adv really))))
+They was on the hovercraft
+(S
+  (NP (NP_Pro (NPro_sub They)))
+  (VP
+    (VP (V (V_ps was)))
+    (PP
+      (P on)
+      (NP_obj (NP (NP_N (Det the) (N_countable hovercraft)))))))
+Nadia will run of cheese
+(S
+  (NP (NP_Prp (NPrp Nadia)))
+  (VP
+    (VP (V (Aux_modal will) (modal (V_bs run))))
+    (PP (P of) (NP_obj (NP (NP_N (N_mass cheese)))))))

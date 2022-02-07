@@ -1,0 +1,6 @@
+g_s='''
+S -> NP[CASE=nom, AGR=?a] VP[AGR=?a]
+
+NP[CASE=?c, AGR=?a] -> PRO[CASE=?c, AGR=?a]
+NP[CASE=?c, AGR=?a] -> Det[CASE=?c, AGR=?a] N[CASE=?c, AGR=?a]
+'''

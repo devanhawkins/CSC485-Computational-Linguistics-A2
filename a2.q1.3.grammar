@@ -1,0 +1,32 @@
+% Michael Dzamba, g7atinko, 994803806
+S -> NP VP
+PP -> P NP | P NPro_obj
+AdvP -> Adv | AdvP Adv
+AdjP -> Adj | AdjP Adj
+VP -> V AdvP | AdvP V | V | VP PP
+NP -> NP_Pro | NP_Prp | NP_N
+NP_Pro -> NPro_obj N | NPro_obj AdjP N | NPro_sub
+NP_Prp -> AdjP NPrp | NPrp
+NP_N -> Det N_countable | Det AdjP N_countable | NP_N PP | Det_mass AdjP N_mass | Adj N_mass | Det_mass N_mass | N_mass
+V -> Aux_modal modal | Aux_perfect perfect | Aux_progressive progressive | Aux_passive passive | V_ps
+modal -> perfect_bs | progressive_bs | passive_bs | V_bs
+perfect_bs -> Aux_perfect_bs perfect
+progressive_bs -> Aux_progressive_bs progressive
+passive_bs -> Aux_passive_bs passive
+perfect -> progressive_pp | passive_pp | V_pp
+progressive_pp -> Aux_progressive_pp progressive
+passive_pp -> Aux_passive_pp passive
+progressive -> passive_ger | V_ger
+passive_ger -> Aux_passive_ger passive
+passive -> V_pp 
+VP -> AdvP V_NP NP_obj | V_NP AdvP NP_obj | AdvP V_NP AdvP NP_obj | V_NP NP_obj
+VP -> AdvP V_NP_PP_to NP_obj PP_to | V_NP_PP_to AdvP NP_obj PP_to | AdvP V_NP_PP_to AdvP NP_obj PP_to | V_NP_PP_to NP_obj PP_to
+VP -> AdvP V_NP_PP_from NP_obj PP_from | V_NP_PP_from AdvP NP_obj PP_from | AdvP V_NP_PP_from AdvP NP_obj PP_from | V_NP_PP_from NP_obj PP_from
+VP -> AdvP V_NP_VP_to NP_obj VP_to | V_NP_VP_to AdvP NP_obj VP_to | AdvP V_NP_VP_to AdvP NP_obj VP_to | V_NP_VP_to NP_obj VP_to
+VP -> AdvP V_S S | V_S AdvP S | AdvP V_S AdvP S | V_S S
+VP -> AdvP V_S_that S_that | V_S_that AdvP S_that | AdvP V_S_that AdvP S_that | V_S_that S_that
+S_that -> 'that' S
+PP_from -> 'from' NP
+PP_to -> 'to' NP
+VP_to -> 'to' V_bs
+NP_obj -> NP | NPro_obj

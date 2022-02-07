@@ -1,0 +1,124 @@
+\documentclass{article}
+
+\author{Michael Dzamba - 994803806}
+\title{CSC485 A2}
+
+\begin{document}
+\maketitle
+
+\textbf{Note:}\\
+I used possibly smaller then 12pt font size for the grammar rules, in order to keep them on one line. All of the rules are also printed in at least 12pt in the attached grammar print out.\\
+\section{Creating/Testing a grammar}
+\subsection{Lexicon design}
+The lexicon used for this grammar is a superset of the lexicon provided in the assignment examples. The reason the lexicon also includes the lexicon from the examples that should fail (instead of not including it and trivially failing on those) is because in a more general situation this might not work. That's why it was decided to give the grammar more information about the lexicon as oposed to less, and rely on its complexity to determine which strings do or do not belong to the grammar.
+\subsection{Grammar design}
+\subsubsection{Support for simple sentences}
+\label{simple sentences}
+The initial part of the grammar was modeled after the pass and fail examples provided in question 1.1 of the assignment. To do this the grammar must support,
+\begin{itemize}
+\item Appending adverbs to verbs\\
+\tiny VP $\rightarrow$ V AdvP $|$ AdvP V $|$ V $|$ VP PP \normalsize
+\item Differntiating between types of nouns\\
+\tiny NP $\rightarrow$ NP\_Pro (pronoun) $|$ NP\_Prp (proper noun) $|$ NP\_N (other nouns) \normalsize \\
+This is necessary, in order to evaluate the restrictions,\\
+\textit{'Can't attach a PP to a name'} and \textit{'Pronoun can't take an adjective'}\\
+Without differentiating between the types of nouns the grammar could not both pass and fail and the required examples. Also in order for the grammar evaluate what kind of determiner a noun needs (if any), it must have this information.
+\end{itemize}
+The grammar satisfies the design specifications by only allowing adverbs to come directly before or after a verb and adjectives to come directly before a noun (other then a pronoun).
+\subsubsection{The auxillary system}
+To support the auxillary system for sentences containing intransitive verbs the following rules were added,\\
+\tiny 
+\begin{itemize}
+\item V $\rightarrow$ Aux\_modal modal $|$ Aux\_perfect perfect $|$ Aux\_progressive progressive $|$ Aux\_passive passive $|$ V\_ps \\
+\item modal $\rightarrow$ perfect\_bs $|$ progressive\_bs $|$ passive\_bs $|$ V\_bs \\
+perfect\_bs $\rightarrow$ Aux\_perfect\_bs perfect \\
+progressive\_bs $\rightarrow$ Aux\_progressive\_bs progressive \\
+passive\_bs $\rightarrow$ Aux\_passive\_bs passive \\
+\item perfect $\rightarrow$ progressive\_pp $|$ passive\_pp $|$ V\_pp \\
+progressive\_pp $\rightarrow$ Aux\_progressive\_pp progressive \\
+passive\_pp $\rightarrow$ Aux\_passive\_pp passive \\
+\item progressive $\rightarrow$ passive\_ger $|$ V\_ger \\
+passive\_ger $\rightarrow$ Aux\_passive\_ger passive \\
+\item passive $\rightarrow$ V\_pp  
+\end{itemize}
+\normalsize 
+The first allows for a verb to start with any auxillary verb in the lexicon or non at all. The rules following ensure that any condition a auxillary verb has on the following verb is satisfied. These rules are sufficient to extend the grammar from the previous section ( \ref{simple sentences} ) to the required grammar supporting auxiallary verbs.
+\subsubsection{Subcategorization}
+To handle transitive verbs the following method was taken,\\
+Given the sentence \textit{'NP some\_verb $A_1$ ... $A_n$'}, create the rule,\\
+\tiny
+VP $\rightarrow$ AdvP $V_{A_1..A_n}$ $A_1$ .. $A_n$ $|$$V_{A_1..A_n}$  AdvP $A_1$ .. $A_n$ $|$AdvP $V_{A_1..A_n}$  AdvP $A_1$ .. $A_n$ $|$$V_{A_1..A_n}$ $A_1$ .. $A_n$
+\normalsize \\
+And add 'some\_verb' to the lexicon in this new verb category,\\
+\tiny
+$V_{A_1..A_n}$ $\rightarrow$ 'some\_verb'
+\normalsize \\
+This is similar to what was outlined in the Jurafsky text (page 402) \\ \\
+Another design decision implemented in this section is start explicitly stating what kinds of prepositional phrases can follow a given verb phrase. This idea was taken from the Jurafsky text (page 401, see \textit{'fly'} and \textit{'travel'} in figure 12.6). \\ For example it's possible to have,\\
+\textit{'I would like to fly [ from Boston ] [ to Philadelphia]'}\\
+and not,\\
+\textit{'I would like to fly [ of Boston ] [ for Philadelphia]'}\\
+\\
+Although the grammar still allows 'VP $\rightarrow$ VP PP', that can be phased out and replaced by this kind of construct if need be. \\
+In the examples provided for part \textit{'1.3'} of the assignment, a differential treatment of count and non-count nouns appeared. Also it allows for potential differentiation in the grammar among what kind of propositional phrases can follow given verbs, since it might not always be true that every propositional phrase can follow every verb phrase. \\
+\textit{'Cheese was always on the menu'}\\
+Thus the following rules were changed/added to the grammar, \\
+\tiny
+NP\_N $\rightarrow$ Det N\_countable $|$ Det AdjP N\_countable $|$ NP\_N PP $|$ Det\_mass AdjP N\_mass $|$ Adj N\_mass $|$ Det\_mass N\_mass $|$ N\_mass\\
+And to the lexicon,\\
+Det $\rightarrow$ 'the' $|$ 'The' $|$ 'a' $|$ 'A' $|$ 'some' $|$ 'Some'\\
+Det\_mass $\rightarrow$ 'the' $|$ 'The' $|$ 'some' $|$ 'Some' 
+\normalsize \\
+
+
+\subsection{Grammar limitations}
+\label{limits}
+Some of the current grammar limitations are,
+\begin{itemize}
+\item \textbf{Plurals not supported}\\
+This aspect of the grammar was not implement because it was not required. Although it can be implemented by adding additional classes and conditions for plural form of every word. An example of this limitation is that, \\
+The grammar rejects, \textit{'The cats with the long soft fur slowly ate'}\\
+Which is a very similar sentence to one that, \\
+The grammar accepts, \textit{'The cat with the long soft fur slowly ate'}
+\item \textbf{Subject-verb argeement not supported}\\
+This aspect of the grammar was not implemented because it was not required, and features would make its implementation a lot easier. Some examples of this short coming are lack of support for plurals and,\\
+The grammar accepts, \textit{'I has left'}\\
+The grammer rejects, '\textit{'They have left'}
+\item \textbf{do not allow adverbs to mix with adjectives}\\
+This is a large limitation of the grammar. It can be implemented in a straightforward manner by sub-dividing adverbs into those that can come before a adjective and using additional rules to allow adjective phrases to have this property. An example of this limitation is,\\
+The grammar rejects, \textit{'The cat with the really long fur slowly ate'}
+\item \textbf{Specificity of adverbs not supported}\\
+The grammar does not specify which adverbs can appear before or after a verb (since adverb/adjective combination is not supported, see above). An example of this is that,\\
+The grammar accepts, \textit{'Nadia left really always really really'}
+\item \textbf{There exist many different subcategorizations and frames that are unsupported} \\
+\small According to Jurafsky text 'modern grammars distinguish as many as 100 subcategories'. This grammar only considers a handful. This limits the usefulness of the grammar. \\
+For example,\\ \textit{'he brought the cat cheese'}, is not accepted by the grammar because it is missing the trivalent form of the verb brought. \normalsize
+\item \textbf{Supports only intransitive verbs with auxillary verbs}
+Transitive verbs are currently not support with auxiallary verbs. This once again can be implemented in a straightforward (but tedious) fashion, but was not required by the assignment examples or text. One example of this limitation is,\\
+The grammar rejects, \textit{'Nadia will leave Ross'}
+\item \textbf{possible prepositonal phrases attached to a verb phrase}\\
+Another limitation of this grammar is that it does not explicitly specify all possible propositional phrases that can follow a verb phrase. This allows the following sentence to be accepted,\\
+\textit{'Nadia will run of cheese'}
+\end{itemize}
+And there are many \small many \tiny many ... \normalsize more limitations of this grammar. A lot of these are straightforward to implement and would add more lines to the grammar which can cause it lose generality without the proper use of feature structures. I did not implement additional grammar fixes to the above limitations because I wanted to keep the grammar around the required size so that it might be easier to read.
+
+\newpage
+
+\subsection{Testing Strategy}
+The testing strategy used was primarily focused on passing and failing on the required examples from the assignment. All sentences from the assignment were used as part of the testing sentences. Simpler forms of these sentences were also added (These were added to aid in debugging a failure to parse a more complex sentence). \\ \\There was also many test sentences which were added based on the written specification for the grammar from the assignment. These were added increase the likelihood that the grammar is not over-fitted to the example sentences from the assignment, and is hopefully as general as the assignment specifies. 
+\\ \\ 
+To further test generalization of the grammar, whenever a grammar change was required to accept or reject a new example from the assignment, a different but similar test sentence was added to enforce the generalization of the new grammar change.
+\\ \\ 
+Lastly test sentences were added that clearly demonstrate the limitations of the grammar. These sentences were created by analyzing the design of the grammar and discovering overly specific sections which are not generalized to the complete english language. Many of these sentences are descibed in more detail in the section above ( Section \ref{limits} ). For example,\\
+When looking at the rules, it is clear that there is no distinguishment between 'I' and 'They' in the lexicon, because they are both only in 'NPro\_sub'. Because the lexicon does not distinguish between them neither can the production rules. A example of where the English language does distinguish between the two is,\\
+\textit{'I was at the store'} and \textit{'They were at the store'}\\
+To make this example more relevant to the grammar, we can change it to have one of the versions in the grammar and the other not, \\
+\textit{'I was on the cheese'} and \textit{'They were on the cheese'}
+\\ \\
+Overall these compose the following four categories of test sentences,\\
+1) Those that should pass and do, 2) Those that should not pass and do not, 3) Those that should pass and do not and 4) Those that should not pass and do. \\ \\
+
+
+
+\end{document}
+

@@ -1,0 +1,87 @@
+% Michael Dzamba g7atinko 994803806
+%
+%these should pass and do
+% -- are from the assignment
+Nadia left immediately
+the cat with the long soft fur slowly ate
+She arrived
+Nadia will leave
+Nadia has left
+Nadia may have been leaving
+Nadia fondled the eggplant
+The handsome poodle brought Ross to the autoclave
+Nadia brought a package for the cheese
+They told her to jump onto the elephant
+She believed that Ross was on the hovercraft
+She really wanted help
+Cheese was always on the menu
+The eggplant reminded Nadia of Ross
+% -- are some made up ones
+The cat slowly ate
+Nadia will be married
+Nadia has been feasting
+The handsome poodle left
+The handsome poodle brought Ross
+They told her
+They told her to run from her to him
+Ross was on the hovercraft
+Ross was already on the hovercraft
+Ross already was on the hovercraft
+She believed Ross
+She believed Ross was on the hovercraft
+The eggplant reminded Nadia
+They believed Ross was on the eggplant
+He believed Ross was on the cheese to the eggplant
+help was always in the cheese
+They always wanted really help
+He told her to run in the cheese
+Nadia left immediately
+Nadia might have been prevented
+I was on the cheese
+%
+%these should pass and dont
+%	should have a parse tree where to and from
+%	PP's are part of brought
+The poodle brought Ross to the cheese from the autoclave
+The poodle brought Ross along the cheese
+%	missing support for first person in auxially
+I have left
+%	missing support for adv adj
+The cat with the really long fur slowly ate
+%	missing support for plural forms
+The cats with the long soft fur slowly ate
+%	do not support anything but instransitive for
+%	use with aux verbs
+Nadia will leave Ross
+%	do not support verb - subject agreement
+They have left
+%	valencies
+he brought the cat cheese
+they were on the cheese
+%these should fail and do
+% -- are from the assignment
+Nadia with the long soft fur slowly ate
+The cat with the tall her arrived
+Nadia will left
+Nadia has could leave
+Nadia has had left
+Nadia found
+Ross brought to him
+They told to jump onto the elephant
+% -- are some made up ones
+The cat with the slowly tall her arrived
+She with the long soft fur slowly ate
+They have left
+that she believed that Ross was on the hovercraft
+%
+%these should fail and dont
+I has left
+%	missing understanding of what
+%	adverbs can go where
+Nadia left really always really really
+%	should fail because was should be were
+%	subject verb agreement
+They was on the hovercraft
+%	restrictions on propositions following a verb
+Nadia will run of cheese
+
